@@ -122,7 +122,7 @@ tr[data-v-556064d8],
 
 /* Animating hue theme */
 main#content {
-    background: linear-gradient(370deg,#23ae65, #000000, #72dcee);
+    background: linear-gradient(255deg,#23ae65, #000000, #72dcee);
     background-size: 400% 400%;
     background-position:90%
 
