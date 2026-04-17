@@ -1,0 +1,34 @@
+#### crowsnest.conf
+#### This is mainsail / MainsailOS default config.
+#### See:
+#### https://github.com/mainsail-crew/crowsnest/blob/master/README.md
+#### for details to configure to your needs.
+
+
+#####################################################################
+####                                                            #####
+####      Information about ports and according URL's           #####
+####                                                            #####
+#####################################################################
+####                                                            #####
+####    Port 8080 equals /webcam/?action=[stream/snapshot]      #####
+####    Port 8081 equals /webcam2/?action=[stream/snapshot]     #####
+####    Port 8082 equals /webcam3/?action=[stream/snapshot]     #####
+####    Port 8083 equals /webcam4/?action=[stream/snapshot]     #####
+####                                                            #####
+#####################################################################
+[crowsnest]
+log_path: /home/pi/printer_data/logs/crowsnest.log  # Default logfile in ~/klipper_logs/crowsnest.log
+log_level: verbose                      # Valid Options are quiet/verbose/debug
+delete_log: false                       # Deletes log on every restart, if set to true
+
+[cam Camera]
+mode: camera-streamer                               # mjpg/rtsp
+enable_rtsp: true
+rtsp_port: 8554
+port: 8080                              # Port
+device: /dev/v4l/by-id/usb-YJXU502S_USB_Camera_20190415-video-index0
+resolution: 640x480                  # widthxheight format
+max_fps: 15                             # If Hardware Supports this it will be forced, ohterwise ignored/coerced.
+v4l2ctl: brightness=0,power_line_frequency=2,sharpness=55,backlight_compensation=2,zoom_absolute=3
+#custom_flags:                          # You can run the Stream Services with custom flags.
